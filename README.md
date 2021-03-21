@@ -2,6 +2,12 @@
 Quickly create new files or folders (folders end with `/`).
 Created using [the V programming language](https://github.com/vlang/v).
 
+## Compile & Install
+```
+v .
+sudo cp vnew /usr/local/bin
+```
+
 ## Examples:
 ```
 vnew abd/def/x.txt
@@ -15,9 +21,3 @@ vnew a.txt b.txt abcd/xyz.txt folder/
 
 ## [Source](vnew.v):
 ![image](https://user-images.githubusercontent.com/26967/111912607-169a1180-8a73-11eb-8197-a20340481cb5.png)
-
-## Compile & Install
-```
-v .
-sudo cp vnew /usr/local/bin
-```
