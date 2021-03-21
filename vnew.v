@@ -7,14 +7,15 @@ fn main() {
 	fp.version('1.0.0')
 	fp.description('Create new files or folders (folders end with `/`).')
 	fp.arguments_description('[FILE_or_FOLDER]...')
+	show_help := fp.bool('help', `h`, false, 'Show this help screen.')
 	fp.skip_executable()
-	if fp.bool('help', `h`, false, 'Show this help screen.') {
-		println(fp.usage())
-		exit(0)
-	}
 	paths := fp.finalize() or {
 		eprintln('Error: $err')
 		exit(1)
+	}
+	if paths.len == 0 || show_help {
+		println(fp.usage())
+		exit(0)
 	}
 	for path in paths {
 		path_splits := path.split('/')
